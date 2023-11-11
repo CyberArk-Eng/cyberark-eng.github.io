@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Software Upgrade Path</title>
+</head>
+<body>
+    <h2>Software Upgrade Path Finder</h2>
+    <form id="upgradeForm">
+        <label for="currentVersion">Current Version:</label>
+        <select id="currentVersion">
+            <option value="10.10">10.10</option>
+            <option value="11.5">11.5</option>
+            <option value="12.2">12.2</option>
+        </select>
+        <br>
+        <label for="targetVersion">Target Version:</label>
+        <select id="targetVersion">
+            <option value="11.7">11.7</option>
+            <option value="12.2">12.2</option>
+            <option value="12.6">12.6</option>
+        </select>
+        <br>
+        <input type="submit" value="Find Upgrade Path">
+    </form>
+    <p id="result"></p>
+    <script>
+        document.getElementById('upgradeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var currentVersion = document.getElementById('currentVersion').value;
+            var targetVersion = document.getElementById('targetVersion').value;
+            var result = document.getElementById('result');
+            if (currentVersion === '10.10' && targetVersion === '12.6') {
+                result.textContent = 'Upgrade to 11.7 then 12.6';
+            } else if (currentVersion === '11.5' && targetVersion === '12.6') {
+                result.textContent = 'Upgrade to 12.2 then 12.6';
+            } else {
+                result.textContent = 'Upgrade directly to ' + targetVersion;
+            }
+        });
+    </script>
+</body>
+</html>
