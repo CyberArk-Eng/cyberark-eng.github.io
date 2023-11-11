@@ -1,3 +1,9 @@
+---
+layout: default
+title: Index
+nav_exclude: true
+---
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Manuel83/sample/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
